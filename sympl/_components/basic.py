@@ -36,7 +36,7 @@ class ConstantPrognostic(Prognostic):
             }
         return return_dict
 
-    def __init__(self, tendencies, diagnostics=None):
+    def __init__(self, tendencies, diagnostics=None, **kwargs):
         """
         Args
         ----
@@ -54,7 +54,7 @@ class ConstantPrognostic(Prognostic):
             self.__diagnostics = diagnostics.copy()
         else:
             self.__diagnostics = {}
-        super(ConstantPrognostic, self).__init__()
+        super(ConstantPrognostic, self).__init__(**kwargs)
 
     def array_call(self, state):
         tendencies = {}
