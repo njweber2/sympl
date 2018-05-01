@@ -101,14 +101,7 @@ else:
                     raise ValueError('The given state has an empty string as a variable name.')
 
             # replace cached variable names with their aliases
-            # new_varnames = []
-            # old_varnames = []
             for longname, shortname in self._aliases.items():
-<<<<<<< HEAD
-                for full_var_name in list(cache_state.keys()):
-=======
-                for full_var_name in tuple(cache_state.keys()):
->>>>>>> 50a6933fcd7bab943dcec75579d19c340e2ad4ae
                     # replace any string in the full variable name that matches longname
                     # example: if longname is "temperature", shortname is "T", and
                     #    full_var_name is "temperature_tendency_from_radiation", the
@@ -120,12 +113,6 @@ else:
                                      'xarray will not allow empty strings as variable names.'
                             raise ValueError(errstr.format(full_var_name))
                         cache_state[alias_name] = cache_state.pop(full_var_name)
-            #             if alias_name not in new_varnames:
-            #                 new_varnames.append(alias_name)
-            #                 old_varnames.append(full_var_name)
-            # for new, old in zip(new_varnames, old_varnames):
-            #     cache_state[new] = cache_state.pop(old)
-
 
             cache_state.pop('time')  # stored as key, not needed in state dict
             if state['time'] in self._cached_state_dict.keys():
