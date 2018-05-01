@@ -21,11 +21,13 @@ from ._core.util import (
     get_component_aliases)
 from ._core.state import (
     get_numpy_arrays_with_properties,
-    restore_data_arrays_with_properties)
+    restore_data_arrays_with_properties,
+    initialize_numpy_arrays_with_properties)
 from ._components import (
     PlotFunctionMonitor, NetCDFMonitor, RestartMonitor,
     ConstantPrognostic, ConstantDiagnostic, RelaxationPrognostic,
     TimeDifferencingWrapper)
+from ._core.wrappers import UpdateFrequencyWrapper, ScalingWrapper
 from ._core.time import datetime, timedelta
 
 __version__ = '0.3.2'
@@ -43,8 +45,10 @@ __all__ = (
     get_numpy_array, jit,
     restore_dimensions, get_numpy_arrays_with_properties,
     restore_data_arrays_with_properties,
+    initialize_numpy_arrays_with_properties,
     get_component_aliases,
     PlotFunctionMonitor, NetCDFMonitor, RestartMonitor,
     ConstantPrognostic, ConstantDiagnostic, RelaxationPrognostic,
+    UpdateFrequencyWrapper, ScalingWrapper,
     datetime, timedelta
 )

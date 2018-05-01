@@ -104,7 +104,11 @@ else:
             # new_varnames = []
             # old_varnames = []
             for longname, shortname in self._aliases.items():
+<<<<<<< HEAD
                 for full_var_name in list(cache_state.keys()):
+=======
+                for full_var_name in tuple(cache_state.keys()):
+>>>>>>> 50a6933fcd7bab943dcec75579d19c340e2ad4ae
                     # replace any string in the full variable name that matches longname
                     # example: if longname is "temperature", shortname is "T", and
                     #    full_var_name is "temperature_tendency_from_radiation", the

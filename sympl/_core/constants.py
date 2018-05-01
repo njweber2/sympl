@@ -22,7 +22,6 @@ class ConstantDict(dict):
                 if sphinx:
                     return_string += '\n'
             return_string += '\n'
-        print(set(self.keys()).difference(printed_names))
         if len(set(self.keys()).difference(printed_names)) > 0:
             return_string += 'User Defined\n'
             for name in self.keys():
@@ -108,6 +107,7 @@ default_constants = ConstantDict({
     'heat_capacity_of_solid_water_as_snow': DataArray(2108., attrs={'units': 'J kg^-1 K^-1'}),
     'thermal_conductivity_of_solid_water_as_snow': DataArray(0.2, attrs={'units': 'W m^-1 K^-1'}),
     'reference_air_pressure': DataArray(1.0132e5, attrs={'units': 'Pa'}),
+    'reference_air_temperature': DataArray(300., attrs={'units': 'degK'}),
     'thermal_conductivity_of_dry_air': DataArray(0.026, attrs={'units': 'W m^-1 K^-1'}),
     'gas_constant_of_dry_air': DataArray(287., attrs={'units': 'J kg^-1 K^-1'}),
     'gas_constant_of_water_vapor': DataArray(461.5, attrs={'units': 'J kg^-1 K^-1'}),
@@ -170,7 +170,9 @@ constant_names_by_category = {
         'heat_capacity_of_dry_air_at_constant_pressure',
         'gas_constant_of_dry_air',
         'thermal_conductivity_of_dry_air',
-        'reference_air_pressure'],
+        'reference_air_pressure',
+        'reference_air_temperature',
+    ],
 
     'stellar': [
         'stellar_irradiance',
